@@ -6,15 +6,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 public class BasePluginActivity extends Activity implements AppInterface {
 
     protected Activity that;
 
     @Override
-    public void attach(@NotNull Activity activity) {
+    public void attach(Activity activity) {
         //上下文注入进来了
         this.that = activity;
     }
@@ -83,7 +81,7 @@ public class BasePluginActivity extends Activity implements AppInterface {
         }
     }
 
-    public void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         if (that == null) {
             super.onCreate(savedInstanceState);
         } else {
